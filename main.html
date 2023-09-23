@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <nav>
+        <li>Code Editor</li>
+    </nav>
+    <div class="editor">
+
+        <iframe id="output"></iframe>
+
+        <div class="main">
+
+            <div class="sub-main-1">
+                <textarea id="html-code" placeholder="HTML"></textarea>
+                <textarea id="css-code" placeholder="CSS"></textarea>
+            </div>
+
+            <div class="sub-main-1">
+                <textarea id="js-code" placeholder="JavaScript"></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function run() {
+            let htmlcode = document.querySelector(".editor #html-code").value;
+            let cssCode = "<style>" + document.querySelector(".editor #css-code").value + "</style>";
+            let jscode = document.querySelector(".editor #js-code").value;
+            let output = document.querySelector(".editor #output").contentWindow.document;
+
+            // Clear the iframe content
+            output.open();
+            output.close();
+
+            // Set the content of the iframe document
+            output.write(htmlcode + cssCode);
+
+            // Create and append a script element for JavaScript
+            let script = document.createElement('script');
+            script.textContent = jscode;
+            output.body.appendChild(script);
+        }
+        document.querySelector(".editor #html-code").addEventListener("keyup", run);
+        document.querySelector(".editor #css-code").addEventListener("keyup", run);
+        document.querySelector(".editor #js-code").addEventListener("keyup", run);
+
+    </script>
+</body>
+
+</html>

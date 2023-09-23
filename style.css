@@ -1,0 +1,113 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*mayur added*/
+}
+body {
+  background-color: rgb(0, 0, 0);
+  height: 100vh; /* mayur added */
+  width: 100vw; /* mayur added */
+  overflow: hidden; /* mayur added */
+}
+.editor {
+  display: flex;
+  flex-direction: row; /* mayur added */
+}
+#output {
+  width: 55vw;
+  height: 90vh; /* mayur added */
+  margin: 0px 6px 0 0px;
+  background-color: white;
+}
+li {
+  font-family: "Courier New", Courier, monospace;
+  font-size: x-large;
+  margin: 0px 0px 8px 0px;
+  padding: 15px;
+  list-style: none;
+  color: white;
+  background-color: red;
+  text-align: center;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 90vh; /* mayur added */
+  overflow: hidden; /* mayur added */
+  width: 50vw;
+}
+.sub-main-1 {
+  height: 45vh; /* mayur added */
+  width: 100%; /* mayur added */
+  margin-bottom: 10px; /* mayur added */
+}
+/* .sub-main-2 {
+  height: 48vh;
+  width: 43vw;
+} */
+#html-code {
+  height: 45vh; /* mayur added */
+  width: 49%; /* mayur added */
+  /* margin-right: 7px; */
+  /* width: 21vw; */
+  background-color: rgb(233, 173, 62);
+  color: black;
+}
+#css-code {
+  height: 45vh; /* mayur added */
+  width: 49%; /* mayur added */
+  /* width: 20vw; */
+  background-color: rgb(1, 1, 101);
+  color: white;
+}
+#js-code {
+  height: 45vh; /* mayur added */
+  width: inherit; /* mayur added */
+  background-color: rgb(247, 247, 7);
+  color: black;
+}
+
+@media (max-width: 768px) {
+  /* Styles for screens with a maximum width of 768px (e.g., mobile devices) */
+  body {
+    height: auto; /* mayur added */
+    overflow: visible; /* mayur added */
+  }
+  .editor {
+    /* mayur added */
+    flex-direction: column; /* mayur added */
+  } /* mayur added */
+
+  .main {
+    /* mayur added */
+    width: 100vw; /* mayur added */
+    flex-direction: column; /* mayur added */
+    height: auto; /* mayur added */
+  }
+  #output {
+    width: 98vw; /* mayur added */
+    height: 30vh; /* mayur added */
+    margin: 0px 5px 5px 5px; /* mayur added */
+    border: 0px; /* mayur added */
+  }
+
+  li {
+    font-size: medium;
+    margin: 8px 0;
+    padding: 10px;
+  }
+
+  .sub-main-1 {
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+  }
+
+  #html-code,
+  #css-code {
+    width: 100%;
+    height: 30vh;
+    margin-right: 0;
+  }
+}
